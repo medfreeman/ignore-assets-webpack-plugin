@@ -19,6 +19,13 @@ $ npm i -D ignore-assets-webpack-plugin
 ## Usage
 
 ```
+/* ES6 */
+import IgnoreAssetsWebpackPlugin from 'ignore-assets-webpack-plugin';
+
+/* ES5 - CommonJS */
+var IgnoreAssetsWebpackPlugin = require('IgnoreAssetsWebpackPlugin');
+
+
 webpack({
 			entry: 'src/test.css',
 			output: {
