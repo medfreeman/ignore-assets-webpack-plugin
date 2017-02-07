@@ -15,10 +15,8 @@ $ npm i -D ignore-assets-webpack-plugin
 
 ```
 webpack({
-			entry: join(__dirname, 'src/test.css'),
-			bail: true,
+			entry: 'src/test.css',
 			output: {
-				path: out,
 				filename: '[name]-dist.js'
 			},
 			module: {
