@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "description": "Ignore assets from compilation. Useful when you use non-js files as entry points with extract-text-webpack-plugin, and don't need the resulting empty js files.",
   "keywords": [
-    "webpack",
-    "ignore",
     "assets",
-    "files"
+    "files",
+    "ignore",
+    "webpack",
+    "webpack-plugin",
+    "webpack2"
   ],
   "main": "lib/index.js",
   "scripts": {
