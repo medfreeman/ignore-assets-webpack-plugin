@@ -3,7 +3,8 @@
 		"babel-preset-es2015"
 	],
 	"plugins": [
-		"transform-regenerator"
+		"transform-regenerator",
+		"add-module-exports"
 	],
 	"ignore": [
       "node_modules/*"
