@@ -46,3 +46,7 @@ webpack({
 			]
 		}
 ```
+
+## Options
+
+ignore: (String | Array) List of assets to be ignored by webpack.
