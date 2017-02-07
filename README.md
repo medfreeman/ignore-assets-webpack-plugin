@@ -1,10 +1,10 @@
 # ignore-assets-webpack-plugin
 
-[![Build Status](https://travis-ci.org/medfreeman/ignore-assets-webpack-plugin.svg?branch=master)](https://travis-ci.org/medfreeman/ignore-assets-webpack-plugin)
-[![dependencies Status](https://david-dm.org/medfreeman/ignore-assets-webpack-plugin/status.svg)](https://david-dm.org/medfreeman/ignore-assets-webpack-plugin)
-[![peerDependencies Status](https://david-dm.org/medfreeman/ignore-assets-webpack-plugin/peer-status.svg)](https://david-dm.org/medfreeman/ignore-assets-webpack-plugin?type=peer)
-[![Coverage Status](https://coveralls.io/repos/github/medfreeman/ignore-assets-webpack-plugin/badge.svg?branch=master)](https://coveralls.io/github/medfreeman/ignore-assets-webpack-plugin?branch=master)
-[![npm version](https://badge.fury.io/js/ignore-assets-webpack-plugin.svg)](https://badge.fury.io/js/ignore-assets-webpack-plugin)
+[![Build Status](https://img.shields.io/travis/medfreeman/ignore-assets-webpack-plugin.svg?label=build)](https://travis-ci.org/medfreeman/ignore-assets-webpack-plugin)
+[![npm version](https://img.shields.io/npm/v/ignore-assets-webpack-plugin.svg)](https://www.npmjs.com/package/ignore-assets-webpack-plugin)
+[![dependencies Status](https://img.shields.io/david/medfreeman/ignore-assets-webpack-plugin.svg)](https://david-dm.org/medfreeman/ignore-assets-webpack-plugin)
+[![peerDependencies Status](https://img.shields.io/david/peer/medfreeman/ignore-assets-webpack-plugin.svg)](https://david-dm.org/medfreeman/ignore-assets-webpack-plugin?type=peer)
+[![Coverage Status](https://img.shields.io/coveralls/medfreeman/ignore-assets-webpack-plugin/master.svg)](https://coveralls.io/github/medfreeman/ignore-assets-webpack-plugin?branch=master)
 
 ## peerDependencies
 
