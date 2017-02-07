@@ -1,0 +1,77 @@
+{
+  "name": "ignore-assets-webpack-plugin",
+  "version": "0.0.0",
+  "description": "Ignore assets from compilation. Useful when you use non-js files as entry points with extract-text-webpack-plugin, and don't need the resulting empty js files.",
+  "keywords": [
+    "webpack",
+    "ignore",
+    "assets",
+    "files"
+  ],
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel -d ./lib ./src",
+    "watch": "babel -w -d ./lib ./src",
+    "prepublish": "npm -s run build",
+    "lint": "eslint --fix ./src",
+    "tests": "ava",
+    "pretest": "npm -s run lint",
+    "test": "npm -s run tests",
+    "test-with-coverage": "nyc npm run test",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "release": "npmpub"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medfreeman/ignore-assets-webpack-plugin.git"
+  },
+  "author": "Mehdi Lahlou <mehdi.lahlou@free.fr>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/medfreeman/ignore-assets-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/medfreeman/ignore-assets-webpack-plugin#readme",
+  "devDependencies": {
+    "ava": "^0.18.1",
+    "babel-cli": "^6.22.2",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-regenerator": "^6.22.0",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "coveralls": "^2.11.16",
+    "css-loader": "^0.26.1",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-babel": "^4.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "npmpub": "^3.1.0",
+    "nyc": "^10.1.2",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "webpack": "^2.2.1"
+  },
+  "peerDependencies": {
+    "webpack": ">=2.2.0"
+  },
+  "ava": {
+    "files": [
+      "test/*.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "nyc": {
+    "exclude": [
+      "test/**"
+    ],
+    "include": [
+      "src/**"
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
