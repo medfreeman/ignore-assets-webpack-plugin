@@ -8,7 +8,7 @@
 ## Installation
 
 ```console
-$ npm install i -D ignore-assets-webpack-plugin
+$ npm i -D ignore-assets-webpack-plugin
 ```
 
 ## Usage
