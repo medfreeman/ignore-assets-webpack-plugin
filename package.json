@@ -47,6 +47,7 @@
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "npmpub": "^3.1.0",
     "nyc": "^10.1.2",
+    "regenerator-runtime": "^0.10.1",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
