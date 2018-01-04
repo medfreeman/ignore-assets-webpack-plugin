@@ -15,7 +15,7 @@ function IgnoreAssetsPlugin(options) {
 }
 
 IgnoreAssetsPlugin.prototype.apply = (compiler) => {
-	compiler.plugin('after-compile', (compilation, callback) => {
+	compiler.plugin('emit', (compilation, callback) => {
 		const compiledAssets = _.keys(compilation.assets);
 		ignoredAssets.forEach((element) => {
 			if (_.indexOf(compiledAssets, element) !== -1) {
