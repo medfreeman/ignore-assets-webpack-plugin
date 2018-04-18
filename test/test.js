@@ -106,6 +106,62 @@ test('single entry chunk with array ignore option', async (t) => {
 	t.regex(mainDistCss, /\.test {/, 'has prelude');
 });
 
+test('multiple configs', async (t) => {
+	const out = randomPath();
+
+	await new Promise((resolve, reject) => {
+    const buildConfig = (entry) => ({
+			entry: {
+        [entry]: join(__dirname, 'src/' + entry + '.css')
+      },
+			bail: true,
+			output: {
+				path: out,
+				filename: '[name]-dist.js'
+			},
+			module: {
+				rules: [
+					{
+						test: /\.css$/,
+						use: ExtractTextWebpackPlugin.extract({
+							fallback: 'style-loader',
+							use: [
+								{
+									loader: 'css-loader'
+								}
+							]
+						})
+					}
+				]
+			},
+			plugins: [
+				new ExtractTextWebpackPlugin('[name]-dist.css'),
+				new IgnoreAssetsPlugin({
+					ignore: entry + '-dist.js'
+				})
+			]
+		})
+		webpack([
+      buildConfig('test'),
+      buildConfig('test2')
+    ], (err, stats) => {
+			err ? reject(err) : resolve(stats);
+		});
+	});
+
+	const firstDistJsExists = existsSync(join(out, 'test-dist.js'));
+  const firstDistCss = readFileSync(join(out, 'test-dist.css'), { encoding: 'utf8' });
+
+  t.falsy(firstDistJsExists, 'dist js file should not exist');
+	t.regex(firstDistCss, /\.test {/, 'has prelude');
+  
+  const secondDistJsExists = existsSync(join(out, 'test2-dist.js'));
+  const secondDistCss = readFileSync(join(out, 'test2-dist.css'), { encoding: 'utf8' });
+  
+  t.falsy(secondDistJsExists, 'dist js file should not exist');
+	t.regex(secondDistCss, /\.test {/, 'has prelude');
+});
+
 test.after((t) => {
 	rimraf.sync(join(__dirname, 'dist'));
 });

@@ -6,18 +6,17 @@
 
 import _ from 'lodash';
 
-let ignoredAssets = [];
-
 function IgnoreAssetsPlugin(options) {
+	this.ignoredAssets = [];
 	if (typeof options === 'object') {
-		ignoredAssets = _.isArray(options.ignore) ? options.ignore : [options.ignore];
+		this.ignoredAssets = _.isArray(options.ignore) ? options.ignore : [options.ignore];
 	}
 }
 
-IgnoreAssetsPlugin.prototype.apply = (compiler) => {
+IgnoreAssetsPlugin.prototype.apply = function apply(compiler) {
 	compiler.plugin('emit', (compilation, callback) => {
 		const compiledAssets = _.keys(compilation.assets);
-		ignoredAssets.forEach((element) => {
+		this.ignoredAssets.forEach((element) => {
 			if (_.indexOf(compiledAssets, element) !== -1) {
 				delete compilation.assets[element];
 			}
