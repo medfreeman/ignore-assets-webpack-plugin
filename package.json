@@ -55,6 +55,9 @@
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "webpack": ">=2.2.0"
   },
