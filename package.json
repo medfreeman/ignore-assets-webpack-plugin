@@ -1,5 +1,5 @@
 {
-  "name": "ignore-assets-webpack-plugin",
+  "name": "@goldinteractive/ignore-assets-webpack-plugin",
   "version": "2.0.1",
   "description": "Ignore assets from compilation. Useful when you use non-js files as entry points with extract-text-webpack-plugin, and don't need the resulting empty js files.",
   "keywords": [
